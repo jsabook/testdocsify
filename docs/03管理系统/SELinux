@@ -1,0 +1,38 @@
+## 访问分类
+
++ mac强制访问控制
+  + 给用户、进程和文件都打上一个标签，只要三者都是一个类型，那么就会允许这个操作。`ps -Z` 、`ls -Z` 、`id -Z`
++ DAC自主访问控制
+
+SELinux 控制命令：
+
+```
+getenforce
+```
+
+查看状态
+
+![image-20201015153155388](../img/image-20201015153155388.png)
+
+
+
+
+
+一共三种状态
+
++ `enforce` 强制访问状态
++ `permissive`进行警告，但是并不组织
++ `disabled`停止selinux服务
+
+
+
+修改selinux
+
+通过配置文件永久修改
+
++ 查看配置文件`vi /etc/selinux/config`
+
+![image-20201015153522364](../img/image-20201015153522364.png)
+
++ 暂时修改 setenforce 0/1/2
+
